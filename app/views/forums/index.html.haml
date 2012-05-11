@@ -1,0 +1,23 @@
+%h1.title
+  W1bbs
+
+.description
+  %p
+    適当に作られた掲示板です。
+
+.index
+  - @forums.each_with_index do |forum, i|
+    = link_to "#{i + 1}:#{forum.title}(#{forum.messages.length})", forum 
+
+%div
+  - @forums.each do |forum|
+    %div.forum
+      %h2
+        = forum.title
+      %dl
+        = render forum.messages.filtered(forum, 'l10')
+      = render :partial => 'post_message_form', :locals => {:forum => forum, :message => @message}
+      = render :partial => 'navigation', :locals => {:forum => forum, :top => true}
+
+.footer
+  = link_to '新規フォーラム作成画面へ', new_forum_path

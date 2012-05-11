@@ -1,0 +1,10 @@
+.forum
+  = render :partial => 'navigation', :locals => {:forum => @forum, :top => false}
+  %h1
+    = @forum.title
+
+  %dl
+    = render @messages
+
+  = render :partial => 'post_message_form', :locals => {:forum => @forum, :message => @message}
+  = render :partial => 'navigation', :locals => {:forum => @forum, :top => false}

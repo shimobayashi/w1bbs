@@ -1,0 +1,7 @@
+.forum-nav
+  - unless top
+    = link_to '掲示板に戻る', root_path
+    = link_to '新着', "/forums/#{forum.id}/#{forum.messages.length}-"
+  = link_to '全部', forum_path(forum)
+  = link_to '最新50件', "/forums/#{forum.id}/l50"
+

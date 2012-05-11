@@ -1,0 +1,7 @@
+%h1 メッセージの書き込み
+.forum
+  %ul
+    - @message.errors.full_messages.each do |msg|
+      %li
+        = msg
+  = link_to '戻る', @forum

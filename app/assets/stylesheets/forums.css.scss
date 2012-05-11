@@ -1,0 +1,28 @@
+// Place all the styles related to the forums controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.description, .index, .footer {
+  background-color: #CCFFCC;
+  margin: 1em;
+  padding: 1em;
+}
+
+.header {
+  background-color: #FFFFFF;
+  text-align: right;
+}
+
+.forum {
+  background-color: #EFEFEF;
+  margin: 1em;
+  padding: 1em;
+
+  h1, h2 {
+    color: red;
+  }
+  .name {
+    color: green;
+    font-weight: bold;
+  }
+}

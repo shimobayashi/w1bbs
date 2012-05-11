@@ -1,0 +1,25 @@
+%h1.title
+  フォーラムの新規作成
+.forum
+  %ul
+    - @forum.errors.full_messages.each do |msg|
+      %li
+        = msg
+  = form_for @forum do |f|
+    %fieldset
+      %div
+        = f.label :title
+        = f.text_field :title
+        = f.submit '新規フォーラム作成'
+      %div
+        = fields_for @message do |f|
+          %div
+            = f.label :name
+            %span.name
+              = session[:nickname] || '名無しさん'
+            = f.label :name, 'E-mail(省略可)'
+            = f.text_field :email
+          %div
+            = f.text_area :body, :size => '80x5'
+  %p
+    = link_to '掲示板に戻る', root_path
