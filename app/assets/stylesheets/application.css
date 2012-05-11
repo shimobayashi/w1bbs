@@ -25,3 +25,7 @@ body {
 .main {
   margin: 0;
 }
+
+.field_with_errors {
+  background-color: #FFCCCC;
+}
