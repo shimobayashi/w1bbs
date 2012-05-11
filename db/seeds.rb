@@ -9,8 +9,7 @@
 Forum.delete_all
 Message.delete_all
 
-Forum.create(:title => 'test forum 1')
-forum = Forum.create(:title => 'test forum 2')
+forum = Forum.create(:title => 'filled forum')
 1000.times do
   forum.messages.create :name => nil, :email => '', :body => 'hoge'
 end

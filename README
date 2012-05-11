@@ -1,0 +1,8 @@
+やんごとなき事情によりRails3を触って遊んだ残骸
+
+Facebookでログイン(?)できる2chっぽい雰囲気の掲示板
+
+/config/database.yml
+/config/initializers/secret_token.rb
+/config/initializers/omniauth.rb
+は秘密鍵とかそういうのがあるのでリポジトリに置いてないのでこのままでは動かない、面倒なのでイマジネーションで補って欲しい
