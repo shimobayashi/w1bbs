@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 class SessionsController < ApplicationController
   def login
     auth = request.env['omniauth.auth']
