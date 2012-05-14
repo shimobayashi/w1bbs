@@ -2,11 +2,16 @@
 
 Facebookでログイン(?)できる2chっぽい雰囲気の掲示板
 
-/config/database.yml
-/config/initializers/secret_token.rb
-/config/initializers/omniauth.rb
-は秘密鍵とかそういうのがあるのでリポジトリに置いてないのでこのままでは動かない、面倒なのでイマジネーションで補って欲しい
-
 大体
 https://github.com/func09/rails3_sample_bbs/tree/activerecord-20100813
 を参考にしたが、色々と動かない箇所が多かったのでまあそんな感じ
+
+Herokuにデプロイもしてみた
+http://young-river-7640.heroku.com/
+
+1つだけ未解決の問題があって、heroku rake assets:precompileを実行すると、
+Permission denied - /app/public/assets
+というエラーがでてコンパイルできない。
+そもそも、pushした時点で自動でコンパイルされるようなことがドキュメントには書いてあるのだが、その形跡が見当たらない。
+この辺り調べてもよく分からなかったので、諦めて一旦config.assets.compile = trueしてしまった。
+解決方法求む。
