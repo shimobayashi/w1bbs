@@ -6,6 +6,9 @@
   background-color: #CCFFCC;
   margin: 1em;
   padding: 1em;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
 }
 
 .header {
@@ -14,9 +17,13 @@
 }
 
 .forum {
-  background-color: #EFEFEF;
   margin: 1em;
   padding: 1em;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  background: -moz-linear-gradient(top, #EFEFEF, #DDDDDD);
+  background: -webkit-gradient(linear, left top, left bottom, from(#EFEFEF), to(#DDDDDD));
 
   h1, h2 {
     color: red;
