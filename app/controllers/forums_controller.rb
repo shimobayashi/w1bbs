@@ -1,6 +1,4 @@
 class ForumsController < ApplicationController
-  caches_action :index, :show
-
   def index
     @forums = Forum.order('updated_at DESC')
     @message = Message.new
