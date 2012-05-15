@@ -21,7 +21,7 @@
   h1, h2 {
     color: red;
   }
-  .name {
+  span.name {
     color: green;
     font-weight: bold;
   }
@@ -31,5 +31,16 @@
   }
   #message_email {
     max-width: 100%;
+  }
+
+  div {
+    &.submit, &.name, &.email {
+      float: left;
+      margin: 0.25em;
+    }
+    &.body {
+      clear: both;
+      margin: 0.25em;
+    }
   }
 }

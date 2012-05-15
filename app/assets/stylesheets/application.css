@@ -30,4 +30,5 @@ body {
 
 .field_with_errors {
   background-color: #FFCCCC;
+  display: inline;
 }

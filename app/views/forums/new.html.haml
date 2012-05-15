@@ -15,13 +15,14 @@
         = f.submit '新規フォーラム作成'
       %div
         = fields_for @message do |f|
-          %div
+          .name
             = f.label :name
             %span.name
               = session[:nickname] || '名無しさん'
-            = f.label :name, 'E-mail(省略可)'
+          .email
+            = f.label :email, 'E-mail(省略可)'
             = f.text_field :email
-          %div
-            = f.text_area :body, :size => '80x5'
+          .body
+            = f.text_area :body
   %p
     = link_to '掲示板に戻る', root_path
