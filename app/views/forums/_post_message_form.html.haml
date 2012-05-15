@@ -10,6 +10,15 @@
         = f.text_field :email
       %div
         = f.text_area :body
+    %div
+      = f.submit '書き込む'
+      = f.label :name
+      %span.name
+        = session[:nickname] || '名無しさん'
+      = f.label :name, 'E-mail(省略可)'
+      = f.text_field :email
+    %div
+      = f.text_area :body
 - else
   %p
     = 'このフォーラムは書き込み上限に達しました。'
