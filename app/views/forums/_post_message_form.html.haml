@@ -1,15 +1,5 @@
 - if forum.messages.length < 1000
   = form_for [forum, message] do |f|
-    %fieldset
-      %div
-        = f.submit '書き込む'
-        = f.label :name
-        %span.name
-          = session[:nickname] || '名無しさん'
-        = f.label :name, 'E-mail(省略可)'
-        = f.text_field :email
-      %div
-        = f.text_area :body
     %div
       = f.submit '書き込む'
       = f.label :name
