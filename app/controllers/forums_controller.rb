@@ -1,5 +1,5 @@
 class ForumsController < ApplicationController
-  caches_page :index, :show
+  caches_action :index, :show
 
   def index
     @forums = Forum.order('updated_at DESC')
