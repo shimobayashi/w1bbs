@@ -8,21 +8,19 @@
       %li
         = msg
   = form_for @forum do |f|
-    %fieldset
-      %div
-        = f.label :title
-        = f.text_field :title
-        = f.submit '新規フォーラム作成'
-      %div
-        = fields_for @message do |f|
-          .name
-            = f.label :name
-            %span.name
-              = session[:nickname] || '名無しさん'
-          .email
-            = f.label :email, 'E-mail(省略可)'
-            = f.text_field :email
-          .body
-            = f.text_area :body
+    %div
+      = f.label :title
+      = f.text_field :title
+      = f.submit '新規フォーラム作成'
+    = fields_for @message do |f|
+      .name
+        = f.label :name
+        %span.name
+          = session[:nickname] || '名無しさん'
+      .email
+        = f.label :email, 'E-mail(省略可)'
+        = f.text_field :email
+      .body
+        = f.text_area :body
   %p
     = link_to '掲示板に戻る', root_path
