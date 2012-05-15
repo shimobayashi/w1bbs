@@ -12,6 +12,8 @@
  *= require_tree .
 */
 
+@import url("smartphone.css") screen and (max-width:768px);
+
 body {
   margin: 0;
   padding: 0;
