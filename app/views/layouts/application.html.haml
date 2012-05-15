@@ -12,6 +12,6 @@
         = "Hello, #{current_user[:nickname]}."
         = link_to 'ログアウト', logout_path
       - else
-        = link_to 'Facebookでログインする', 'auth/facebook'
+        = link_to 'Facebookでログインする', '/auth/facebook'
     .main
       = yield
