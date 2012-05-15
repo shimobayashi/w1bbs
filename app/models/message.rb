@@ -44,7 +44,8 @@ class Message < ActiveRecord::Base
       body.gsub!(url, "<a href='#{url}' target='_blank'>#{url}</a>")
     end
     body.gsub!(/&gt;&gt;([0-9]+)?(-([0-9]+))?/) do
-      "<a href='#{Rails.application.routes.url_helpers.forum_path(self.forum, :filter => "#{$1}#{$2}")}'>#{$&}</a>"
+      #"<a href='#{Rails.application.routes.url_helpers.forum_path(self.forum, :filter => "#{$1}#{$2}")}'>#{$&}</a>"
+      "<a href='/forums/#{self.forum.id}/#{$1}#{$2}'>#{$&}</a>"
     end
     return body
   end
