@@ -28,6 +28,10 @@ body {
   margin: 0;
 }
 
+.validation-error {
+  background-color: #FFCCCC;
+}
+
 .field_with_errors {
   background-color: #FFCCCC;
   display: inline;

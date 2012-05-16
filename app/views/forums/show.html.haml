@@ -1,6 +1,6 @@
 - content_for :title do
   = @forum.title
-.forum
+.forum{:id => ['forum', @forum.id]}
   = render :partial => 'navigation', :locals => {:forum => @forum, :top => false}
   %h1
     = @forum.title
