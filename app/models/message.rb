@@ -4,7 +4,8 @@ class Message < ActiveRecord::Base
   belongs_to :forum
   attr_accessible :body, :name, :position, :email
   validates :body, :presence => true, :length => {:maximum => 1024}, :lines_limit => true
-  validates :email, :email => true
+  validates :email, :email => true, :length => {:maximum => 50}
+  validates :name, :length => {:maximum => 50}
   validates :forum, :message_limit => true
   before_validation :position, :on => :create do
     if self.forum && last_message = self.forum.messages.last
