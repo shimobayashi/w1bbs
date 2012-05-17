@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120509112705) do
+ActiveRecord::Schema.define(:version => 20120517070454) do
 
   create_table "forums", :force => true do |t|
     t.string   "title"
@@ -20,12 +20,12 @@ ActiveRecord::Schema.define(:version => 20120509112705) do
 
   create_table "messages", :force => true do |t|
     t.integer  "position"
-    t.string   "name"
+    t.string   "name",       :limit => 50
     t.text     "body"
     t.integer  "forum_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.string   "email"
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+    t.string   "email",      :limit => 50
   end
 
   add_index "messages", ["forum_id"], :name => "index_messages_on_forum_id"
