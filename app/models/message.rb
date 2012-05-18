@@ -14,6 +14,10 @@ class Message < ActiveRecord::Base
       self.position = 1
     end
   end
+  before_validation :name, :on => :create do
+    return unless self.name.is_a?(String)
+    self.name = self.name[0, 50] if self.name.length > 50
+  end
   before_save do
     self.forum.touch unless self.email == 'sage'
   end
