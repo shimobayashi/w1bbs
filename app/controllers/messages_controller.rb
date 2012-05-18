@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
     @message.name = session[:nickname]
     if @message.save
       from = params[:from_position].to_i
-      messages = @forum.messages.where('position > ?', from);
+      messages = @forum.messages.where('position > ?', from).order(:position)
       respond_with do |format|
         format.html do
           if request.xhr?
