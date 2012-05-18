@@ -6,10 +6,12 @@ class MessagesController < ApplicationController
     @message = @forum.messages.build(params[:message])
     @message.name = session[:nickname]
     if @message.save
+      from = params[:from_position].to_i
+      messages = @forum.messages.where('position > ?', from);
       respond_with do |format|
         format.html do
           if request.xhr?
-            render @message
+            render :json => {:html => render_to_string(messages), :last_position => @message.position}
           else
             redirect_to "/forums/#{@forum.id}/#{@message.position}-"
           end

@@ -1,6 +1,7 @@
 - if forum.messages.length < 1000
   = form_for [forum, message], :remote => true do |f|
     .validation-error
+    = hidden_field_tag :from_position, forum.messages.last.position
     .submit
       = f.submit '書き込む'
     .name
