@@ -6,6 +6,9 @@
   - else
     %span.email
       = mail_to(message.email, ( message.name.blank? ? '名無しさん' : message.name ) )
+  - unless message.name.blank?
+    %span.facebook-wall
+      %a{:href => "http://www.facebook.com/#{message.name}"} facebook
   = message.created_at.strftime("%Y年%m月%d日 %H:%M")
 %dd
   = raw message.body_html
