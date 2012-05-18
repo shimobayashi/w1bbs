@@ -48,7 +48,6 @@ class Message < ActiveRecord::Base
       URI.extract(body, ['http', 'https']).each do |url|
         raw_url = CGI::unescapeHTML(url)
         body.gsub!(url, "<a href='#{URI.escape(raw_url, /[^-_.!~*()a-zA-Z\d;\/?:@&=+$,\[\]%]/n)}' target='_blank'>#{url}</a>") # Escape include single quote and no escape persent
-        puts  "<a href='#{URI.escape(raw_url, /[^-_.!~*()a-zA-Z\d;\/?:@&=+$,\[\]]%/n)}' target='_blank'>#{url}</a>"
       end
       body.gsub!(/&gt;&gt;([0-9]+)?(-([0-9]+))?/) do
         "<a href='/forums/#{self.forum.id}/#{$1}#{$2}'>#{$&}</a>"
