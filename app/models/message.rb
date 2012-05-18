@@ -45,7 +45,7 @@ class Message < ActiveRecord::Base
     Rails.cache.fetch("body_html_#{self.id}") do
       body = CGI::escapeHTML(self.body)
       body.gsub!(/\n/, '<br />')
-      URI.extract(body).each do |url|
+      URI.extract(body, ['http', 'https']).each do |url|
         raw_url = CGI::unescapeHTML(body)
         body.gsub!(url, "<a href='#{URI.escape(raw_url, /[^-_.!~*()a-zA-Z\d;\/?:@&=+$,\[\]]/n)}' target='_blank'>#{url}</a>") # Escape include single quote
       end
